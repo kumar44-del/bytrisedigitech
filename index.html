@@ -383,7 +383,7 @@ const count=el=>{const n=+el.dataset.n,s=el.dataset.s??'+',d=+(el.dataset.d||0),
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const c=e.target.querySelector('[data-n]');c&&count(c);io.unobserve(e.target)}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const fm=$('#fm'),sb=$('#sb'),ms=$('#ok'),v=id=>$(id).value.trim();
-const W3F={url:'https://api.web3forms.com/submit',key:'b899c7c4-b241-494a-8787-294829906772'};
+const W3F={url:'https://api.web3forms.com/submit',key:'11532aae-c597-4c08-8993-cbc37db99f89'};
 const phoneOk=x=>{const d=x.replace(/\D/g,'');if(!/^[+\d\s()-]+$/.test(x))return false;if(/^\+(?!91)/.test(x.trim()))return d.length>=8&&d.length<=15;const n=d.length===12&&d.startsWith('91')?d.slice(2):d.length===11&&d[0]==='0'?d.slice(1):d;return /^[6-9]\d{9}$/.test(n)};
 const RULES=[['#nm',x=>x.length>1,'Please enter your full name'],['#em',x=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x),'Please enter a valid email address'],['#ph',phoneOk,'Please enter a valid mobile number'],['#sv',x=>!!x,'Please select a service'],['#pd',x=>x.length>4,'Please tell us about your project'],['#cs',()=>$('#cs').checked,'Please accept to continue']];
 let busy=false;
